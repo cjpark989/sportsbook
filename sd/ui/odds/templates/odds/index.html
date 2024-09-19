@@ -1,0 +1,25 @@
+{% extends "odds/base.html" %}
+
+{% block content %} 
+  <h4 class="mega mb0">Recent odds</h4>
+  
+  {% if latest_odds %}
+    <ul>
+      {% for odds in latest_odds %}
+        <li> {{ odds }} </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <div class="p1 white bg-info">Fanduel</div>
+
+  <div class="p1">
+    <ul>
+      <li> one </li>
+    </ul>
+  </div>
+
+  <div class="p1 white bg-info">DraftKings</div>
+  <div class="p1 white bg-info">BetMGM</div>
+  <div class="p1 white bg-info">Pointsbet</div>
+{% endblock %}

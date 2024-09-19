@@ -1,0 +1,68 @@
+{% extends "odds/base.html" %}
+
+{% block content %} 
+  <meta http-equiv="refresh" content="30" />
+  <div class="content-container column">
+
+    {% if game_description %}
+      <h1> {{ game_description }} </h1>
+    {% else %}
+      <h1> Game not found. </h1>
+    {% endif %}
+
+    <div class="panel-container row">
+      <!-- Container for the panels. -->
+
+      <div class="recent-odds-container">
+        <!-- Container to to store recent odds. -->
+        <h1>Recent Odds</h1>
+        
+        {% for odds_item in odds_items %}
+          <p>{{ odds_item }}</p>
+        {% endfor %}
+
+      </div>
+
+      {% if market_metadata %}
+        <!-- Container for all markets in a game. -->
+        <div class="markets-container column">
+
+          {% for market in market_metadata %}
+            <div class="market-container">
+              <!-- Container for all plays in a market. -->
+              
+              <div class="market-description">
+                <h2> {{ market.description }} </h2>
+              </div>
+
+              {% for outcome in market.outcomes %}
+                <div class="play-container row">
+                  <!-- Container for all odds in a play. -->
+
+                  <div class="play-description">
+                    <h4> {{ outcome.play }} </h4>
+                  </div>
+
+                  <div class="play-description">
+                    <h4> Best: {{ outcome.best_odd }} </h4>
+                  </div>
+
+                  {% for book, odds_source, odd in outcome.book_odds %}
+                      <!-- Container for all odds in a given market. -->      
+                      <div class="odds-item-container" draggable="true" class="draggable">
+                        <p> <h4> <a href={{ odds_source }}> {{ book }} </a> </h4> </p>
+                        <p> {{ odd }} </p>
+                      </div>
+
+                  {% endfor %}
+                </div>
+              {% endfor %}
+            </div>
+          {% endfor %}
+        </div>
+
+      {% endif %} 
+
+    </div>
+  </div>
+{% endblock %}

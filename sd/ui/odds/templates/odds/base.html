@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'odds/game.css' %}">
+    <script src="{% static 'odds/script.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+    <title>{% block title %}Odds Scraper{% endblock %}</title>
+</head>
+
+<body>
+    <div id="content" class="c">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+

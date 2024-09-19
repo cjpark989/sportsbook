@@ -1,0 +1,46 @@
+:root {
+    /** 
+      Global variables for styling.
+    */
+    --default-background-color: rgb(10, 10, 10);
+    --default-color: rgb(43, 144, 255);
+  
+    --default-padding: 5px;
+    --default-margin: 5px;
+    
+    --default-border: 3px solid white;
+    --default-border-radius: 5px;
+  
+    --swatch-black-10: rgb(10, 10, 10);
+    --swatch-black-20: rgb(20, 20, 20);
+    --swatch-black-30: rgb(30, 30, 30);
+    --swatch-black-40: rgb(40, 40, 40);
+    --swatch-black-50: rgb(50, 50, 50);
+    --swatch-black-60: rgb(60, 60, 60);
+    --swatch-black-70: rgb(70, 70, 70);
+    --swatch-black-80: rgb(80, 80, 80);
+    --swatch-black-90: rgb(90, 90, 90);
+    
+    /** 
+      Default attributes for elements to inherit from.
+    */
+    color: var(--default-color);
+    background-color: var(--default-background-color);
+    
+    font-family: nunito;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+    
+    
+  /** Inherit these containers classes to use a flex direction. */
+  .row {
+      display: flex;
+      flex-direction: row;
+  }
+  
+  .column {
+      display: flex;
+      flex-direction: column;
+  }
